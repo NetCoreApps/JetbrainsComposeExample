@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Using Include="JetbrainsComposeDesktopExample" />
+    <Using Include="ServiceStack" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ServiceStack" Version="6.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JetbrainsComposeDesktopExample.ServiceInterface\JetbrainsComposeDesktopExample.ServiceInterface.csproj" />
+    <ProjectReference Include="..\JetbrainsComposeDesktopExample.ServiceModel\JetbrainsComposeDesktopExample.ServiceModel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\dtos.mjs" />
+  </ItemGroup>
+
+</Project>
