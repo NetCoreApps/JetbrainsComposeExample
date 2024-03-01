@@ -20,8 +20,8 @@ dependencies {
     // (in a separate module for demo project and in testMain).
     // With compose.desktop.common you will also lose @Preview functionality
     implementation(compose.desktop.currentOs)
-    implementation("net.servicestack:client:1.0.49")
-    implementation("com.google.code.gson:gson:2.8.9")
+    implementation("net.servicestack:client:1.1.0")
+    implementation("com.google.code.gson:gson:2.10.1")
 }
 
 compose.desktop {
