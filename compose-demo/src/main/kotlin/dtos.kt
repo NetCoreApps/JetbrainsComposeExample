@@ -1,18 +1,18 @@
 /* Options:
-Date: 2023-10-12 15:08:12
-Version: 6.110
+Date: 2024-03-01 15:12:24
+Version: 8.12
 Tip: To override a DTO option, remove "//" prefix before updating
 BaseUrl: https://localhost:5001
 
-//Package:
+//Package: 
 //AddServiceStackTypes: True
 //AddResponseStatus: False
-//AddImplicitVersion:
+//AddImplicitVersion: 
 //AddDescriptionAsComments: True
-//IncludeTypes:
-//ExcludeTypes:
+//IncludeTypes: 
+//ExcludeTypes: 
 //InitializeCollections: True
-//TreatTypesAsStrings:
+//TreatTypesAsStrings: 
 //DefaultImports: java.math.*,java.util.*,net.servicestack.client.*
 */
 
@@ -23,14 +23,14 @@ import net.servicestack.client.*
 
 @Route("/hello")
 // @Route("/hello/{Name}")
-open class Hello : IReturn<HelloResponse>
+open class Hello : IReturn<HelloResponse>, IGet
 {
     var name:String? = null
     companion object { private val responseType = HelloResponse::class.java }
     override fun getResponseType(): Any? = Hello.responseType
 }
 
-open class SearchFiles : IReturn<SearchFilesResponse>
+open class SearchFiles : IReturn<SearchFilesResponse>, IGet
 {
     var pattern:String? = null
     companion object { private val responseType = SearchFilesResponse::class.java }

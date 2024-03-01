@@ -1,25 +1,18 @@
-using Funq;
-using ServiceStack;
-using JetbrainsComposeDesktopExample.ServiceInterface;
-
 [assembly: HostingStartup(typeof(JetbrainsComposeDesktopExample.AppHost))]
 
 namespace JetbrainsComposeDesktopExample;
 
-public class AppHost : AppHostBase, IHostingStartup
+public class AppHost() : AppHostBase("Jetbrains Compose"), IHostingStartup
 {
     public void Configure(IWebHostBuilder builder) => builder
         .ConfigureServices(services => {
             // Configure ASP.NET Core IOC Dependencies
         });
 
-    public AppHost() : base("JetbrainsComposeDesktopExample", typeof(MyServices).Assembly) {}
-
-    public override void Configure(Container container)
+    public override void Configure()
     {
-        // Configure ServiceStack only IOC, Config & Plugins
+        // Configure ServiceStack, Run custom logic after ASP.NET Core Startup
         SetConfig(new HostConfig {
-            UseSameSiteCookies = true,
         });
     }
 }
